@@ -8,23 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		09CEAD3B29C1A41700165662 /* MarketPlaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CEAD3A29C1A41700165662 /* MarketPlaceApp.swift */; };
-		09CEAD3D29C1A41700165662 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CEAD3C29C1A41700165662 /* ContentView.swift */; };
+		09CEAD3D29C1A41700165662 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CEAD3C29C1A41700165662 /* SignInView.swift */; };
 		09CEAD3F29C1A41800165662 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09CEAD3E29C1A41800165662 /* Assets.xcassets */; };
 		09CEAD4229C1A41800165662 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09CEAD4129C1A41800165662 /* Preview Assets.xcassets */; };
 		09CEAD4A29C1AA6100165662 /* Montserrat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09CEAD4929C1AA6100165662 /* Montserrat.ttf */; };
 		09CEAD4D29C1AAFE00165662 /* CustomFontModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CEAD4C29C1AAFE00165662 /* CustomFontModifier.swift */; };
 		09CEAD4F29C1AB1B00165662 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CEAD4E29C1AB1B00165662 /* View.swift */; };
+		09CEAD5329C1BA1F00165662 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CEAD5229C1BA1F00165662 /* SignInViewModel.swift */; };
+		09CEAD5629C1BA7200165662 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CEAD5529C1BA7200165662 /* CustomTextField.swift */; };
+		09CEAD5A29C1BB0B00165662 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CEAD5929C1BB0B00165662 /* LoginView.swift */; };
+		09CEAD5E29C1BFF500165662 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CEAD5D29C1BFF500165662 /* LoginViewModel.swift */; };
+		09CEAD6029C1C14B00165662 /* MarketPlaceAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CEAD5F29C1C14B00165662 /* MarketPlaceAppViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		09CEAD3729C1A41700165662 /* MarketPlace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarketPlace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09CEAD3A29C1A41700165662 /* MarketPlaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketPlaceApp.swift; sourceTree = "<group>"; };
-		09CEAD3C29C1A41700165662 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		09CEAD3C29C1A41700165662 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		09CEAD3E29C1A41800165662 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09CEAD4129C1A41800165662 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		09CEAD4929C1AA6100165662 /* Montserrat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Montserrat.ttf; sourceTree = "<group>"; };
 		09CEAD4C29C1AAFE00165662 /* CustomFontModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFontModifier.swift; sourceTree = "<group>"; };
 		09CEAD4E29C1AB1B00165662 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		09CEAD5229C1BA1F00165662 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		09CEAD5529C1BA7200165662 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		09CEAD5929C1BB0B00165662 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		09CEAD5D29C1BFF500165662 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		09CEAD5F29C1C14B00165662 /* MarketPlaceAppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketPlaceAppViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,11 +67,12 @@
 		09CEAD3929C1A41700165662 /* MarketPlace */ = {
 			isa = PBXGroup;
 			children = (
+				09CEAD5C29C1BBF200165662 /* ViewModifier */,
+				09CEAD5B29C1BBE100165662 /* Extenstion */,
 				09CEAD4829C1AA3300165662 /* Font */,
-				09CEAD3A29C1A41700165662 /* MarketPlaceApp.swift */,
-				09CEAD3C29C1A41700165662 /* ContentView.swift */,
-				09CEAD4C29C1AAFE00165662 /* CustomFontModifier.swift */,
-				09CEAD4E29C1AB1B00165662 /* View.swift */,
+				09CEAD5729C1BAB500165662 /* App */,
+				09CEAD5429C1BA5500165662 /* View */,
+				09CEAD5029C1B9FC00165662 /* Feature */,
 				09CEAD3E29C1A41800165662 /* Assets.xcassets */,
 				09CEAD4029C1A41800165662 /* Preview Content */,
 			);
@@ -82,6 +93,66 @@
 				09CEAD4929C1AA6100165662 /* Montserrat.ttf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		09CEAD5029C1B9FC00165662 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				09CEAD5829C1BAEF00165662 /* Login */,
+				09CEAD5129C1BA1000165662 /* SignIn */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		09CEAD5129C1BA1000165662 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				09CEAD3C29C1A41700165662 /* SignInView.swift */,
+				09CEAD5229C1BA1F00165662 /* SignInViewModel.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		09CEAD5429C1BA5500165662 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				09CEAD5529C1BA7200165662 /* CustomTextField.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		09CEAD5729C1BAB500165662 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				09CEAD3A29C1A41700165662 /* MarketPlaceApp.swift */,
+				09CEAD5F29C1C14B00165662 /* MarketPlaceAppViewModel.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		09CEAD5829C1BAEF00165662 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				09CEAD5929C1BB0B00165662 /* LoginView.swift */,
+				09CEAD5D29C1BFF500165662 /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		09CEAD5B29C1BBE100165662 /* Extenstion */ = {
+			isa = PBXGroup;
+			children = (
+				09CEAD4E29C1AB1B00165662 /* View.swift */,
+			);
+			path = Extenstion;
+			sourceTree = "<group>";
+		};
+		09CEAD5C29C1BBF200165662 /* ViewModifier */ = {
+			isa = PBXGroup;
+			children = (
+				09CEAD4C29C1AAFE00165662 /* CustomFontModifier.swift */,
+			);
+			path = ViewModifier;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,8 +226,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09CEAD5329C1BA1F00165662 /* SignInViewModel.swift in Sources */,
+				09CEAD5A29C1BB0B00165662 /* LoginView.swift in Sources */,
 				09CEAD4F29C1AB1B00165662 /* View.swift in Sources */,
-				09CEAD3D29C1A41700165662 /* ContentView.swift in Sources */,
+				09CEAD5629C1BA7200165662 /* CustomTextField.swift in Sources */,
+				09CEAD6029C1C14B00165662 /* MarketPlaceAppViewModel.swift in Sources */,
+				09CEAD5E29C1BFF500165662 /* LoginViewModel.swift in Sources */,
+				09CEAD3D29C1A41700165662 /* SignInView.swift in Sources */,
 				09CEAD3B29C1A41700165662 /* MarketPlaceApp.swift in Sources */,
 				09CEAD4D29C1AAFE00165662 /* CustomFontModifier.swift in Sources */,
 			);
