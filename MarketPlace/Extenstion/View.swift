@@ -13,10 +13,10 @@ extension View {
         self.modifier(TabBarItemViewModifier(tab: tab, selection: selection))
     }
     
-    func backgroundColor() -> some View {
+    func backgroundColor(edges: Edge.Set = [.horizontal, .top]) -> some View {
         ZStack {
             Color("Background")
-                .ignoresSafeArea(.container, edges: [.horizontal, .top])
+                .ignoresSafeArea(.container, edges: edges)
             self
         }
     }

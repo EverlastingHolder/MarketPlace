@@ -15,7 +15,7 @@ struct SignInView: View {
                     CustomTextField(text: $viewModel.firstName, placeholder: "First name")
                     CustomTextField(text: $viewModel.lastName, placeholder: "Last name")
                     CustomTextField(text: $viewModel.email, placeholder: "Email")
-                    CustomTextField(text: $viewModel.password, placeholder: "Password", isSecure: true)
+                    CustomTextField(text: $viewModel.password, placeholder: "Password", isTextField: .secure)
                     
                     VStack(alignment: .leading, spacing: 15) {
                         Button(action: {

@@ -3,7 +3,7 @@ import SwiftUI
 
 extension MarketPlaceApp {
     final class ViewModel: ObservableObject {
-        @AppStorage("State")
+        @AppStorage("StateAppNavigation")
         var state: StateView = .login
         @Published
         var isPresented: Bool = false

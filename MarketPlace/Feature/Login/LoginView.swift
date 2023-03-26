@@ -13,7 +13,7 @@ struct LoginView: View {
             VStack(spacing: 35) {
                 // Поля ввода
                 CustomTextField(text: $viewModel.email, placeholder: "Email")
-                CustomTextField(text: $viewModel.password, placeholder: "Password", isSecure: true)
+                CustomTextField(text: $viewModel.password, placeholder: "Password", isTextField: .secure)
                 
                 //Кнопка входа
                 Button(action: {

@@ -8,7 +8,7 @@ struct CustomTextField: View {
     private var isHide: Bool = false
     let placeholder: String
     @State
-    var isSecure: Bool = false
+    var isTextField: switchTextField = .original
     
     var body: some View {
         ZStack {
@@ -18,10 +18,18 @@ struct CustomTextField: View {
                     .customFont(fontSize: 11, fontWeight: .medium)
             }
             HStack {
-                changeTextField
-                    .padding(.leading, 15)
-                    .padding(.trailing, isSecure ? 0 : 15)
-                if isSecure {
+                switch isTextField {
+                case .original:
+                    TextField("", text: $text)
+                        .padding(.leading, 15)
+                case .secure:
+                    if isHide {
+                        TextField("", text: $text)
+                            .padding(.leading, 15)
+                    } else {
+                        SecureField("", text: $text)
+                            .padding(.leading, 15)
+                    }
                     ZStack {
                         if isHide {
                             Image(systemName: "eye")
@@ -33,8 +41,12 @@ struct CustomTextField: View {
                     .padding(.trailing, 15)
                     .onTapGesture {
                         isHide.toggle()
-                        isSecure.toggle()
                     }
+                case .search:
+                    TextField("", text: $text)
+                        .padding(.leading, 15)
+                    Image("Search")
+                        .padding(.trailing, 15)
                 }
             }
              
@@ -46,12 +58,7 @@ struct CustomTextField: View {
         )
     }
     
-    @ViewBuilder
-    var changeTextField: some View {
-        if isSecure {
-            SecureField("", text: $text)
-        } else {
-            TextField("", text: $text)
-        }
+    enum switchTextField {
+        case original, secure, search
     }
 }
