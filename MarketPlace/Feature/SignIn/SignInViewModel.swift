@@ -25,7 +25,7 @@ extension SignInView {
         }
         
         private func validationField() -> Bool {
-            if isValidEmail(email) && !lastName.isEmpty && !firstName.isEmpty { return true }
+            if isValidEmail(email) && !lastName.isEmpty && !firstName.isEmpty && !password.isEmpty { return true }
             return false
         }
         

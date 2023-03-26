@@ -1,9 +1,10 @@
-import Foundation
+import Combine
+import SwiftUI
 
 extension MarketPlaceApp {
     final class ViewModel: ObservableObject {
-        @Published
-        var state: StateView = .home
+        @AppStorage("State")
+        var state: StateView = .login
         @Published
         var isPresented: Bool = false
         @Published
@@ -13,6 +14,6 @@ extension MarketPlaceApp {
     }
 }
 
-enum StateView {
+enum StateView: String {
     case signIn, login, home
 }

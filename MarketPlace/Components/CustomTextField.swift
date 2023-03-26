@@ -24,9 +24,9 @@ struct CustomTextField: View {
                 if isSecure {
                     ZStack {
                         if isHide {
-                            Image("eyeOff")
-                        } else {
                             Image(systemName: "eye")
+                        } else {
+                            Image("eyeOff")
                         }
                     }
                     .frame(width: 15, height: 15)
