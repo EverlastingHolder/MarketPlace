@@ -47,7 +47,7 @@ struct ProfileView: View {
                             VStack(alignment: .leading) {
                                 HStack {
                                     Spacer()
-                                    Image("Share")
+                                    Image("share")
                                     Spacer()
                                     Text("Upload item")
                                         .customFont(fontSize: 14, fontWeight: .semibold)
