@@ -2,25 +2,24 @@ import SwiftUI
 
 struct SignInView: View {
     @StateObject
-    private var viewModel: SignInView.ViewModel = .init()
-    @Binding
-    var state: StateView
+    var viewModel: SignInView.ViewModel
     
     var body: some View {
         VStack(spacing: 70) {
             Text("Sign in")
                 .customFont(fontSize: 26, fontWeight: .semibold)
-            
             //Middle block
             VStack {
                 VStack(spacing: 35) {
+                    // Поля ввода
                     CustomTextField(text: $viewModel.firstName, placeholder: "First name")
                     CustomTextField(text: $viewModel.lastName, placeholder: "Last name")
                     CustomTextField(text: $viewModel.email, placeholder: "Email")
+                    CustomTextField(text: $viewModel.password, placeholder: "Password", isSecure: true)
                     
                     VStack(alignment: .leading, spacing: 15) {
                         Button(action: {
-                            state = .home
+                            viewModel.validationEmail()
                         }) {
                             HStack {
                                 Spacer()
@@ -33,16 +32,16 @@ struct SignInView: View {
                         .frame(height: 46)
                         .background(Color("ButtonBackground"))
                         .cornerRadius(15)
-                        
-                        Button(action: {
-                            withAnimation() {
-                                state = .login
-                            }
-                        }) {
-                            HStack {
-                                Text("Already have an account?")
-                                    .foregroundColor(.gray)
-                                    .customFont(fontSize: 10, fontWeight: .medium)
+                        // Переход на LoginView
+                        HStack {
+                            Text("Already have an account?")
+                                .foregroundColor(.gray)
+                                .customFont(fontSize: 10, fontWeight: .medium)
+                            Button(action: {
+                                withAnimation() {
+                                    viewModel.toLogin()
+                                }
+                            }) {
                                 Text("Log in")
                                     .customFont(fontSize: 10, fontWeight: .medium)
                             }
@@ -50,7 +49,7 @@ struct SignInView: View {
                     }
                 }
             }
-            
+            // Кнопки входа через google & apple
             VStack(spacing: 38) {
                 SignInWith(imageName: "google", text: "Google")
                 SignInWith(imageName: "apple", text: "Apple")

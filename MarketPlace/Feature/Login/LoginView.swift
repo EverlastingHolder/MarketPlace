@@ -2,9 +2,7 @@ import SwiftUI
 
 struct LoginView: View {
     @StateObject
-    private var viewModel: LoginView.ViewModel = .init()
-    @Binding
-    var state: StateView
+    var viewModel: LoginView.ViewModel
     
     var body: some View {
         VStack {
@@ -13,11 +11,13 @@ struct LoginView: View {
                 .padding(.bottom, 70)
             
             VStack(spacing: 35) {
-                CustomTextField(text: $viewModel.firstName, placeholder: "First name")
+                // Поля ввода
+                CustomTextField(text: $viewModel.email, placeholder: "Email")
                 CustomTextField(text: $viewModel.password, placeholder: "Password", isSecure: true)
                 
+                //Кнопка входа
                 Button(action: {
-                    state = .home
+                    viewModel.checkPassword()
                 }) {
                     HStack {
                         Spacer()

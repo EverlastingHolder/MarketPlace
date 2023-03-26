@@ -3,26 +3,30 @@ import SwiftUI
 @main
 struct MarketPlaceApp: App {
     @StateObject
-    private var viewModel: MarketPlaceApp.ViewModel = .init()
+    private var viewModel: Self.ViewModel = .init()
+    
+    private let transition = AnyTransition.asymmetric(insertion: .slide, removal: .scale).combined(with: .opacity)
     var body: some Scene {
         WindowGroup {
-            let transition = AnyTransition.asymmetric(insertion: .slide, removal: .scale).combined(with: .opacity)
             ZStack {
                 switch viewModel.state {
                 case .signIn:
-                    SignInView(state: $viewModel.state)
-                        .id(1)
+                    SignInView(viewModel: .init(appViewModel: viewModel))
                         .transition(transition)
                 case .home:
-                    EmptyView()
-                        .id(2)
+                    AppTabBarView(viewModel: .init(appViewModel: viewModel))
                         .transition(transition)
                 case .login:
-                    LoginView(state: $viewModel.state)
-                        .id(3)
+                    LoginView(viewModel: .init(appViewModel: viewModel))
                         .transition(transition)
                 }
-            }.animation(.default, value: viewModel.state)
+            }
+            .animation(.default, value: viewModel.state)
+            .alert(isPresented: $viewModel.isPresented) {
+                Alert(title: Text(viewModel.alertTitle), message: Text(viewModel.alertMessage ?? ""))
+            }
+            .backgroundColor()
+            .preferredColorScheme(.light)
         }
     }
 }

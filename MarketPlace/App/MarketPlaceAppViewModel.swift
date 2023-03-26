@@ -1,9 +1,15 @@
 import Foundation
 
 extension MarketPlaceApp {
-    class ViewModel: ObservableObject {
+    final class ViewModel: ObservableObject {
         @Published
-        var state: StateView = .signIn
+        var state: StateView = .home
+        @Published
+        var isPresented: Bool = false
+        @Published
+        var alertTitle: String = "Error"
+        @Published
+        var alertMessage: String? = nil
     }
 }
 
