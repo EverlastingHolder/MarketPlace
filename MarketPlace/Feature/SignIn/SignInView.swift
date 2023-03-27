@@ -38,9 +38,9 @@ struct SignInView: View {
                                 .foregroundColor(.gray)
                                 .customFont(fontSize: 10, fontWeight: .medium)
                             Button(action: {
-                                withAnimation() {
+//                                withAnimation() {
                                     viewModel.toLogin()
-                                }
+//                                }
                             }) {
                                 Text("Log in")
                                     .customFont(fontSize: 10, fontWeight: .medium)

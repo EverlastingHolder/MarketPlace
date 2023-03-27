@@ -4,11 +4,12 @@ struct CustomTextField: View {
     
     @Binding
     var text: String
-    @State
-    private var isHide: Bool = false
     let placeholder: String
     @State
+    private var isHide: Bool = false
+    @State
     var isTextField: switchTextField = .original
+    
     
     var body: some View {
         ZStack {
@@ -21,13 +22,19 @@ struct CustomTextField: View {
                 switch isTextField {
                 case .original:
                     TextField("", text: $text)
+                        .textCase(.lowercase)
+                        .textInputAutocapitalization(.never)
                         .padding(.leading, 15)
                 case .secure:
                     if isHide {
                         TextField("", text: $text)
+                            .textCase(.lowercase)
+                            .textInputAutocapitalization(.never)
                             .padding(.leading, 15)
                     } else {
                         SecureField("", text: $text)
+                            .textCase(.lowercase)
+                            .textInputAutocapitalization(.never)
                             .padding(.leading, 15)
                     }
                     ZStack {
@@ -44,7 +51,10 @@ struct CustomTextField: View {
                     }
                 case .search:
                     TextField("", text: $text)
+                        .textCase(.lowercase)
+                        .textInputAutocapitalization(.never)
                         .padding(.leading, 15)
+                        .padding(.trailing, 15)
                     Image("Search")
                         .padding(.trailing, 15)
                 }
@@ -53,7 +63,7 @@ struct CustomTextField: View {
         }
         .frame(height: 30)
         .background(
-            RoundedRectangle(cornerRadius: 10)
+            RoundedRectangle(cornerRadius: 15)
                 .foregroundColor(Color("TextFieldBackground"))
         )
     }

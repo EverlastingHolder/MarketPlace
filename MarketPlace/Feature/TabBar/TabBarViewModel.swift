@@ -2,7 +2,7 @@ import SwiftUI
 
 extension AppTabBarView {
     class ViewModel: ObservableObject {
-        @AppStorage("StateTabBar")
+        @Published
         var tabSelection: TabBarItem = .home
         
         weak var appViewModel: MarketPlaceApp.ViewModel?

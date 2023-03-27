@@ -35,11 +35,11 @@ extension SignInView {
         
         func validationEmail() {
             if let _ = userModel.first(where: { $0.email == email }) {
-                errorMessage(error: "User with email already ")
+                errorMessage(error: "Пользователь с таким email уже существует")
                 return
             }
             if !validationField() {
-                errorMessage(error: "Email failed")
+                errorMessage(error: "Неверный email")
                 return
             }
             saveDataToCache()

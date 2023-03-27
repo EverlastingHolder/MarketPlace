@@ -20,4 +20,13 @@ extension View {
             self
         }
     }
+    
+    func backgroundCircle(color: Color, w: CGFloat, h: CGFloat) -> some View {
+        ZStack(alignment: .center) {
+            Circle()
+                .fill(color)
+                .frame(width: w, height: h)
+            self
+        }
+    }
 }

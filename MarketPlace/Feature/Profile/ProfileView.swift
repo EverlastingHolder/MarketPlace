@@ -7,7 +7,7 @@ struct ProfileView: View {
     
     var body: some View {
         ScrollView {
-            VStack {
+            VStack(spacing: 0) {
                 ZStack(alignment: .top) {
                     HStack {
                         Image("ArrowLeft")
@@ -18,7 +18,7 @@ struct ProfileView: View {
                         
                         Spacer()
                     }
-                    VStack {
+                    VStack(spacing: 0) {
                         Text("Profile")
                             .customFont(fontSize: 15, fontWeight: .bold)
                         VStack(spacing: 6) {

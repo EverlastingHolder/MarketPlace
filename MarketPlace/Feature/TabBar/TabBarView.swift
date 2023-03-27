@@ -6,8 +6,10 @@ struct AppTabBarView: View {
     
     var body: some View {
         CustomTabBarContainerView(selection: $viewModel.tabSelection) {
-            HomeView()
-                .tabBarItem(tab: .home, selection: $viewModel.tabSelection)
+            NavigationStack {
+                HomeView()
+            }
+            .tabBarItem(tab: .home, selection: $viewModel.tabSelection)
             
             Color.red
                 .tabBarItem(tab: .favorites, selection: $viewModel.tabSelection)
