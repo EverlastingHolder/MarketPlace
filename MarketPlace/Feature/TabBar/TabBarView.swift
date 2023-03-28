@@ -11,13 +11,13 @@ struct AppTabBarView: View {
             }
             .tabBarItem(tab: .home, selection: $viewModel.tabSelection)
             
-            Color.red
+            Text("Hello world")
                 .tabBarItem(tab: .favorites, selection: $viewModel.tabSelection)
             
-            Color.green
+            Text("Hello world")
                 .tabBarItem(tab: .cart, selection: $viewModel.tabSelection)
             
-            Color.orange
+            Text("Hello world")
                 .tabBarItem(tab: .messages, selection: $viewModel.tabSelection)
             
             ProfileView(viewModel: .init(tabViewModel: viewModel, appViewModel: viewModel.appViewModel))

@@ -18,7 +18,8 @@ struct CustomTabBarContainerView<Content:View>: View {
     var body: some View {
         ZStack(alignment: .bottom) {
             content
-                .padding(.bottom, 50)
+                .padding(.bottom, 52)
+                
             CustomTabBarView(tabs: tabs, selection: $selection, localSelection: selection)
         }
         .onPreferenceChange(TabBarItemsPreferenceKey.self) { value in
